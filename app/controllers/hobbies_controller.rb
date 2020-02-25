@@ -37,7 +37,12 @@ class HobbiesController < ApplicationController
   end
 
   def destroy
-    @hobby.destroy
+    @hobby = Hobby.find(params[:id])
+    
+    if @hobby.present?
+      @hobby.destroy
+    end
+
     redirect_to hobbies_path
   end
 

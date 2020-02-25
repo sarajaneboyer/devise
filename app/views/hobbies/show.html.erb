@@ -1,5 +1,6 @@
 <h1>Hobby:</h1><hr />
 <h4><%= @hobby.name %></h4><hr />
 <%= link_to 'Go Back', hobbies_path %><br />
-<%= link_to 'Edit Hobby', edit_hobby_path %>
+<%= link_to 'Edit Hobby', edit_hobby_path %><br />
+<%= link_to 'Delete Hobby', hobby_path, method: :delete %>
 
