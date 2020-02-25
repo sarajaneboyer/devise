@@ -3,11 +3,13 @@
 <h4>Here's a list of all your hobbies!</h4>
 <p><%= link_to "Add New Hobby", new_hobby_path %></p>
 <hr />
-<%# Loop through and print all current_user.hobbies %>
 
 <ul>
   <% @hobbies.each do |h| %>
     <li><h2><%= h.name %><br /></h2></li>
+    <%= link_to 'Edit Hobby', edit_hobby_path(h) %><br />
+    <%= link_to 'Show Hobby', hobby_path(h) %><br />
+    <%= link_to 'Delete Hobby', hobby_path(h), method: :delete %>
   <% end %>
 </ul>
 

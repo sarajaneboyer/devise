@@ -1,11 +1,8 @@
-<h1>Add a New Hobby to Your Account!</h1>
-
-<%= form_with(model: @hobby, local: true) do |f| %>
+<%= form_with(model: hobby, local: true) do |f| %>
   <div class = "field">
     <%= f.label :name %>
     <%= f.text_field :name, required: true, autofocus: true, placeholder: "Name of Hobby" %>
   </div>
   <%= f.submit "Add Hobby!" %>
 <% end %>
-
 <%= link_to 'Go Back', hobbies_path %>

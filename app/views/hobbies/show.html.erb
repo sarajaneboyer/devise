@@ -1,2 +1,5 @@
-<h1>Hobbies#show</h1>
-<p>Find me in app/views/hobbies/show.html.erb</p>
+<h1>Hobby:</h1><hr />
+<h4><%= @hobby.name %></h4><hr />
+<%= link_to 'Go Back', hobbies_path %><br />
+<%= link_to 'Edit Hobby', edit_hobby_path %>
+
