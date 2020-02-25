@@ -1,2 +1,4 @@
-<h1>Hobbies#index</h1>
-<p>Find me in app/views/hobbies/index.html.erb</p>
+
+<h1>Welcome back <%= current_user.first_name %><br /></h1>
+<h4>Here's a list of all your hobbies!</h4>
+<%= button_to "Log Off", destroy_user_session_path, method: :delete %>
