@@ -1,4 +1,11 @@
 
 <h1>Welcome back <%= current_user.first_name %><br /></h1>
 <h4>Here's a list of all your hobbies!</h4>
+<p><%= link_to "Add New Hobby", new_hobby_path %></p>
+<hr />
+<%# Loop through and print all current_user.hobbies %>
+
+
+
+<hr />
 <%= button_to "Log Off", destroy_user_session_path, method: :delete %>

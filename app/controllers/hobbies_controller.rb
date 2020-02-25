@@ -1,5 +1,7 @@
 class HobbiesController < ApplicationController
 
+  before_action :set_hobby, only: [:show, :edit, :update]
+
   def index
     @hobbies = current_user.hobbies
   end
@@ -26,9 +28,26 @@ class HobbiesController < ApplicationController
     #BEFORE ACTION
   end
 
+  def update
+    if @hobby.update(hobby_params)
+      redirect_to hobbies_path
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    @hobby.destroy
+    redirect_to hobbies_path
+  end
+
   private
 
   def hobby_params
     params.require(:hobby).permit(:name)
+  end
+
+  def set_hobby
+    @hobby = current_user.hobbies.find(params[:id])
   end
 end
