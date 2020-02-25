@@ -5,7 +5,11 @@
 <hr />
 <%# Loop through and print all current_user.hobbies %>
 
-
+<ul>
+  <% @hobbies.each do |h| %>
+    <li><h2><%= h.name %><br /></h2></li>
+  <% end %>
+</ul>
 
 <hr />
 <%= button_to "Log Off", destroy_user_session_path, method: :delete %>
